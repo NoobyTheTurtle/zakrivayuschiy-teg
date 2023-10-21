@@ -38,11 +38,11 @@
 
 .button {
   position: relative;
+  transition: box-shadow 0.3s;
 }
 
 .button:hover {
   color: var(--themes-background);
-  transition: color 1s;
 }
 
 .button:focus {
@@ -51,7 +51,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px var(--themes-main-color);
-  transition: box-shadow 0.3s;
 }
 
 .button::after {
@@ -73,7 +72,7 @@
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   line-height: 0.9;
   text-align: center;
@@ -86,16 +85,17 @@
   margin-block-end: 99px;
   padding-block-start: clamp(7.5rem, 7.134rem + 1.56vw, 8.5rem);
   padding-block-end: 25px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   text-transform: uppercase;
 }
 
-.header__title {
+.header__logo {
   margin-block-end: 18px;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
 }
 
-.header__subtitle {
+.header__title {
   margin-block-end: 23px;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
@@ -141,8 +141,9 @@
 }
 
 .theme-menu__button:disabled::before {
-  content: '▶';
+  content: "▶";
   position: absolute;
+  animation: arrow 1s ease-in-out infinite;
   inline-size: 16px;
   block-size: 13px;
   inset-block-start: 0;
@@ -156,7 +157,6 @@
 .theme-menu__button:focus-visible {
   outline: none;
   opacity: 0.6;
-  pointer-events: none;
 }
 
 .theme-menu__button:focus {
@@ -177,11 +177,15 @@
 
 .card__image {
   border-block: 2px solid var(--themes-main-color);
+  object-fit: cover;
+  object-position: center;
   inline-size: 100%;
+  aspect-ratio: 1/1;
 }
 
 .card__content {
-  padding: 25px;
+  padding-inline: 25px;
+  padding-block-start: 31px;
 }
 
 .card__text {
@@ -195,9 +199,10 @@
 .card__like {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   padding-inline: 25px;
-  padding-block-end: 25px;
+  padding-block-start: 25px;
+  padding-block-end: 18px;
 }
 
 .card__icon-button {
@@ -205,7 +210,7 @@
   border: 2px solid transparent;
   background-color: transparent;
   transition: border 0.3s;
-  block-size: 38px;
+  min-block-size: 38px;
 }
 
 .card__icon-button:focus {
@@ -223,7 +228,7 @@
 .card__like-button {
   border: 2px solid var(--themes-main-color);
   background-color: var(--themes-background);
-  block-size: 38px;
+  min-block-size: 38px;
   inline-size: 130px;
 }
 
@@ -255,7 +260,7 @@
   }
 
   .card__content {
-    padding-block: 21px;
+    padding-block: 23px;
   }
 
   .card__like {

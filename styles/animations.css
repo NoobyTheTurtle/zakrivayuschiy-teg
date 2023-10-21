@@ -19,10 +19,6 @@
   }
 }
 
-.theme-menu__button:disabled::before {
-  animation: arrow 1s ease-in-out infinite;
-}
-
 .card__icon-button .core {
   fill: transparent;
   transition: fill 0.3s 0.03s linear;
@@ -77,6 +73,7 @@
 .like-icon.is-liked .heart {
   transform-origin: center;
   animation: heart 0.3s 0.1s ease-in;
+  animation-direction: alternate;
 }
 
 @keyframes sparks {
@@ -87,6 +84,7 @@
 
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s 0.3s ease-in;
+  animation-direction: alternate;
 }
 
 .like-icon .contour {
