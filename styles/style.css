@@ -38,7 +38,7 @@
 
 .button {
   position: relative;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, color 1s;
 }
 
 .button:hover {
@@ -95,6 +95,10 @@
   text-decoration: none;
 }
 
+.header__logo:focus {
+  outline: none;
+}
+
 .header__title {
   margin-block-end: 23px;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
@@ -143,7 +147,8 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  animation: arrow 1s ease-in-out infinite;
+  animation: arrow 0.5s ease-in-out infinite;
+  animation-direction: alternate;
   inline-size: 16px;
   block-size: 13px;
   inset-block-start: 0;
@@ -161,6 +166,12 @@
 
 .theme-menu__button:focus {
   outline: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card {
@@ -200,9 +211,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  padding-inline: 25px;
-  padding-block-start: 25px;
-  padding-block-end: 18px;
+  padding: 25px;
 }
 
 .card__icon-button {
@@ -210,7 +219,7 @@
   border: 2px solid transparent;
   background-color: transparent;
   transition: border 0.3s;
-  min-block-size: 38px;
+  block-size: 38px;
 }
 
 .card__icon-button:focus {
@@ -232,7 +241,7 @@
   inline-size: 130px;
 }
 
-.footer__button {
+.save__button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -242,7 +251,7 @@
   background-color: var(--themes-background);
 }
 
-.footer__img {
+.save__img {
   position: relative;
   z-index: 1;
   inline-size: 21px;
@@ -267,11 +276,11 @@
     padding-block-start: 4px;
   }
 
-  .footer__button {
+  .save__button {
     flex-direction: column;
   }
 
-  .footer__img {
+  .save__img {
     inline-size: 28px;
     block-size: 28px;
   }
