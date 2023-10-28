@@ -8,6 +8,10 @@
   --main-font-weight-text: 400;
   --themes-background: #fff;
   --themes-main-color: #000;
-  --themes-background-image: url(../svg/pattern-light.svg);
-  --heart-color: #FF0000;
+  --heart-color: #ff0000;
+  --themes-bg-color-main: #d3d3d3;
+  --themes-bg-color-from: #e7e7e7;
+  --themes-bg-color-to: #1a1a1a;
+  --difference-color: #fff;
+  --difference-bg-color: #fff;
 }
